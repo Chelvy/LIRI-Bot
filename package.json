@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/Chelvy/LIRI-Bot/issues"
   },
-  "homepage": "https://github.com/Chelvy/LIRI-Bot#readme"
+  "homepage": "https://github.com/Chelvy/LIRI-Bot#readme",
+  "dependencies": {
+    "config": "^3.2.2",
+    "node-spotify-api": "^1.1.1",
+    "require": "^2.4.20"
+  }
 }
