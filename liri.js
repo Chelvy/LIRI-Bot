@@ -1,12 +1,13 @@
 require('dotenv').config();
-
+var axios = require("axios");
+var moment = require("moment");
 var keys = require("./keys.js");
 var fs = require("fs");
 var request = require("request");
 var Spotify = require('node-spotify-api');
 var logfile = './log.txt';
-var log = require('simple-node-logger').createSimpleFileLogger(logfile);
-log.setLevel('all');
+// var log = require('simple-node-logger').createSimpleFileLogger(logfile);
+// log.setLevel('all');
 
 
 function concertThis(artistBandName) {
@@ -72,14 +73,7 @@ function doWhatItSays() {
             return console.log(error);
         }
         var itSays = response.split(",");
-        for (var i = 0; i < itSays.length; i++) {
-            console.log(itSays[i]);
-            concertThis(itSays[i]);
-            movieThis(itSays[i]);
-            if (itSays[i] === "I Want it That Way,") {
-                spotifyThisSong(itSays[i]);
-            }
-        }
+        console.log(spotifyThisSong(itSays[1]));
         console.log("-----------------------");
     });
 };
@@ -89,7 +83,11 @@ const inputTopic = process.argv[3];
 
 switch (userInput) {
     case ('concert-this'):
-        concertThis(inputTopic);
+        if (inputTopic) {
+            concertThis(inputTopic);
+        } else {
+            concertThis("world")
+        }
         break;
     case ('spotify-this-song'):
         if (inputTopic) {
