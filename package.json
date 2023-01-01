@@ -19,7 +19,7 @@
   "homepage": "https://github.com/Chelvy/LIRI-Bot#readme",
   "dependencies": {
     "axios": "^0.19.0",
-    "config": "^3.2.2",
+    "config": "^3.3.8",
     "dotenv": "^8.0.0",
     "moment": "^2.24.0",
     "node-spotify-api": "^1.1.1",
